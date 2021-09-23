@@ -12,5 +12,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  public ResetName(){
+    this.name="";
+  }
 
 }
