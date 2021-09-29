@@ -3,10 +3,13 @@
   <label>Họ và tên:</label>
   <input type="text" [(ngModel)]="name" [title]="'Họ và tên của KH: ' + name" />
   <br /><br />
-  <label>Năm sinh:</label>
+  <label>Năm sinh: </label>
   <input type="text" [(ngModel)]="age" />
-  <span *ngIf="age <= 1993"> Năm sinh không hợp lệ</span>
-  <br /><br />
+  <div *ngIf="age > 2022; then not; else ok"></div>
+  <ng-template #not><span>Năm sinh không hợp lệ</span></ng-template>
+  <ng-template #ok><span>Năm sinh hợp lệ</span></ng-template>
+  <br />
+  <br />
   <label>Giới tính:</label>
   <input type="text" value="Nam" /><br /><br />
   <button (click)="resetName()">Reset Name</button>
