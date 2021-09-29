@@ -28,9 +28,9 @@
       <td>{{ i + 1 }}</td>
       <td>{{ skill.skill }}</td>
       <td [ngClass]="{ year: skill.year > 1 }">{{ skill.year }}</td>
-      <td *ngIf="skill.type === 'Giỏi'; then good; else bad"></td>
-      <ng-template #good>Giỏi</ng-template>
-      <ng-template #bad></ng-template>
+      <div *ngIf="skill.type === 'Good'; then good; else bad"></div>
+      <ng-template #good><td>Giỏi</td></ng-template>
+      <ng-template #bad><td>Khá</td></ng-template>
     </tr>
   </table>
   <div></div>
