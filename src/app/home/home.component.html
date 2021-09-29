@@ -4,7 +4,8 @@
   <input type="text" [value]="name" [title]="'Họ và tên của KH: ' + name" />
   <br /><br />
   <label>Năm sinh:</label>
-  <input type="text" value="1993" />
+  <input type="text" value="" />
+  <span *ngIf="age <= 1993"> Năm sinh không hợp lệ</span>
   <br /><br />
   <label>Giới tính:</label>
   <input type="text" value="Nam" />
