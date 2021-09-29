@@ -1,4 +1,11 @@
 <div id="home">
-  <h3>Home component work</h3>
-  <p>Xin chào bạn: {{ name }}</p>
+  <h3>Thông tin cá nhân: {{ name }}</h3>
+  <label>Họ và tên:</label>
+  <input type="text" [value]="name" [title]="'Họ và tên của KH: ' + name" />
+  <br /><br />
+  <label>Năm sinh:</label>
+  <input type="text" value="1993" />
+  <br /><br />
+  <label>Giới tính:</label>
+  <input type="text" value="Nam" />
 </div>
