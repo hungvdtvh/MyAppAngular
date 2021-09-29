@@ -1,6 +1,12 @@
-<div class="tvh">
-  <div>Welcom to Angular 12</div>
-  <input [(ngModel)]="name" />
-  <div>Xin chào bạn {{ name }}</div>
-  <button type="button" (click)="ResetName()">Reset Name</button>
+<div id="home">
+  <h3>Thông tin cá nhân: {{ name }}</h3>
+  <label>Họ và tên:</label>
+  <input type="text" [value]="name" [title]="'Họ và tên của KH: ' + name" />
+  <br /><br />
+  <label>Năm sinh:</label>
+  <input type="text" value="" />
+  <span *ngIf="age <= 1993"> Năm sinh không hợp lệ</span>
+  <br /><br />
+  <label>Giới tính:</label>
+  <input type="text" value="Nam" />
 </div>
