@@ -7,10 +7,14 @@
   <input type="text" [(ngModel)]="age" />
   <div *ngIf="age > 2022; then not; else ok"></div>
   <ng-template #not><span>Năm sinh không hợp lệ</span></ng-template>
-  <ng-template #ok><span>Năm sinh hợp lệ</span></ng-template>
+  <ng-template #ok><span></span></ng-template>
   <br />
   <br />
   <label>Giới tính:</label>
   <input type="text" value="Nam" /><br /><br />
+  <label>Kỹ năng: </label>
+  <div *ngFor="let skill of skills; let i = index">
+    <li>{{ i + 1 }}.{{ skill }}</li>
+  </div>
   <button (click)="resetName()">Reset Name</button>
 </div>
