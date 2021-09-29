@@ -1,12 +1,13 @@
 <div id="home">
   <h3>Thông tin cá nhân: {{ name }}</h3>
   <label>Họ và tên:</label>
-  <input type="text" [value]="name" [title]="'Họ và tên của KH: ' + name" />
+  <input type="text" [(ngModel)]="name" [title]="'Họ và tên của KH: ' + name" />
   <br /><br />
   <label>Năm sinh:</label>
-  <input type="text" value="" />
+  <input type="text" [(ngModel)]="age" />
   <span *ngIf="age <= 1993"> Năm sinh không hợp lệ</span>
   <br /><br />
   <label>Giới tính:</label>
-  <input type="text" value="Nam" />
+  <input type="text" value="Nam" /><br /><br />
+  <button (click)="resetName()">Reset Name</button>
 </div>

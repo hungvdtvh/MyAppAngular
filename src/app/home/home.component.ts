@@ -10,6 +10,13 @@ export class HomeComponent implements OnInit {
   public age: number = 1994;
   constructor() { }
 
-  ngOnInit(): void {  } 
+  ngOnInit(): void {
+
+    } 
+  public resetName(): void{
+    //console.log("ResetName")
+    this.name="";
+
+  }
   
 }
