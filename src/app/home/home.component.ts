@@ -12,7 +12,10 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.skills.push("C#","JavaScript","Python","Angular");
+    this.skills.push(
+      {skill: "C#", year: 3, type: "Good"}, 
+      {skill: "Javascript", year: 1, type: "Good"}, 
+      {skill: "Python", year: 2, type: "Bad"});
     console.log(this.skills);
     } 
   public resetName(): void{

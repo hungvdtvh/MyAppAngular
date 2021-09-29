@@ -12,9 +12,27 @@
   <br />
   <label>Giới tính:</label>
   <input type="text" value="Nam" /><br /><br />
-  <label>Kỹ năng: </label>
+  <!--<label>Kỹ năng: </label>
   <div *ngFor="let skill of skills; let i = index">
     <li>{{ i + 1 }}.{{ skill }}</li>
-  </div>
+  </div> -->
+  <h1>Skills</h1>
+  <table class="customers">
+    <tr>
+      <th>STT</th>
+      <th>Skill</th>
+      <th>Year</th>
+      <th>Type</th>
+    </tr>
+    <tr *ngFor="let skill of skills; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ skill.skill }}</td>
+      <td [ngClass]="{ year: skill.year > 1 }">{{ skill.year }}</td>
+      <td *ngIf="skill.type === 'Giỏi'; then good; else bad"></td>
+      <ng-template #good>Giỏi</ng-template>
+      <ng-template #bad></ng-template>
+    </tr>
+  </table>
+  <div></div>
   <button (click)="resetName()">Reset Name</button>
 </div>
