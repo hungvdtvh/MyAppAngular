@@ -1,21 +1,20 @@
 <div id="home">
-  <h3>Thông tin cá nhân: {{ name }}</h3>
+  <h3>Thông tin cá nhân: {{ name | uppercase }}</h3>
   <label>Họ và tên:</label>
   <input type="text" [(ngModel)]="name" [title]="'Họ và tên của KH: ' + name" />
   <br /><br />
   <label>Năm sinh: </label>
-  <input type="text" [(ngModel)]="age" />
-  <div *ngIf="age > 2022; then not; else ok"></div>
-  <ng-template #not><span>Năm sinh không hợp lệ</span></ng-template>
+  <input type="text" [value]="age | date: 'dd/MM/yyyy'" />
+  <br /><br />
+  <label>Tuổi: </label>
+  <input type="text" [value]="yearD" />
+  <div *ngIf="yearD < 18; then not; else ok"></div>
+  <ng-template #not><span>Tuổi bạn chưa đủ</span></ng-template>
   <ng-template #ok><span></span></ng-template>
   <br />
   <br />
   <label>Giới tính:</label>
   <input type="text" value="Nam" /><br /><br />
-  <!--<label>Kỹ năng: </label>
-  <div *ngFor="let skill of skills; let i = index">
-    <li>{{ i + 1 }}.{{ skill }}</li>
-  </div> -->
   <h1>Skills</h1>
   <table class="customers">
     <tr>
@@ -26,8 +25,10 @@
     </tr>
     <tr *ngFor="let skill of skills; let i = index">
       <td>{{ i + 1 }}</td>
-      <td>{{ skill.skill }}</td>
-      <td [ngClass]="{ year: skill.year > 1 }">{{ skill.year }}</td>
+      <td>{{ skill.skill | uppercase }}</td>
+      <td [ngClass]="{ year: skill.year > 1 }">
+        {{ skill.year | exponentialStrength: 3 | number: "2.2-4" }}
+      </td>
       <div *ngIf="skill.type === 'Good'; then good; else bad"></div>
       <ng-template #good><td>Giỏi</td></ng-template>
       <ng-template #bad><td>Khá</td></ng-template>
