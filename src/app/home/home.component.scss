@@ -1,7 +1,9 @@
-#home {
+.home {
+  float: left;
   border: 1px solid;
   padding: 10px;
   box-shadow: 5px 10px #888888;
+  width: 100%;
 }
 #customers {
   font-family: Arial, Helvetica, sans-serif;
@@ -32,4 +34,15 @@
 }
 .year {
   color: red;
+}
+.home .left {
+  float: left;
+  width: 50%;
+  border-right: 2px solid black;
+}
+.home .right {
+  float: left;
+}
+.cachRa {
+  margin-right: 10px;
 }
